@@ -383,7 +383,7 @@ We can now write our command and test it.
 
 ```sh
 file="test_file.txt"      # Test with a regular file.
-file="test file.txt"      # Test with a file containing a white space.
+file="test file.txt"      # Test with a file containing a white space. This will cause error and say that both test and file.txt doesn't exist. Spaces are not allowed, as it splits and evaluates as different files, when it should be just one.
 file="missing_file.txt"   # Test with a non-existent file.
 
 [[ -f $file ]] && cat "$file" || echo "Error: file '$file' does not exist!"
